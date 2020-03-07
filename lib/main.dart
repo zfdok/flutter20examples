@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/bottom_app_bar.dart';
+import 'package:flutterapp/my_bottom_bar.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: "app01",
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.indigo
       ),
-      home: MyBottomAppBar(),
+      home: MybottomAppbar(),
     );
   }
 }

@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/each_view.dart';
 
-class MyBottomAppBar extends StatefulWidget {
+class MybottomAppbar extends StatefulWidget {
   @override
-  _MyBottomAppBarState createState() => _MyBottomAppBarState();
+  _MybottomAppbarState createState() => _MybottomAppbarState();
 }
 
-class _MyBottomAppBarState extends State<MyBottomAppBar> {
+class _MybottomAppbarState extends State<MybottomAppbar> {
   String _title = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return EachView("新页面");
-          }));
-        },
-        child: Icon(Icons.add),
-      ),
+          child: Icon(Icons.add),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return EachView('新页面');
+            }));
+          }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: EachView(_title),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.indigoAccent,
         shape: CircularNotchedRectangle(),
+        color: Colors.indigoAccent,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
@@ -32,19 +31,19 @@ class _MyBottomAppBarState extends State<MyBottomAppBar> {
               color: Colors.white,
               onPressed: () {
                 setState(() {
-                  this._title = "home";
+                  _title = 'Home';
                 });
               },
             ),
             IconButton(
-              icon: Icon(Icons.airplay),
+              icon: Icon(Icons.add_a_photo),
               color: Colors.white,
               onPressed: () {
                 setState(() {
-                  this._title = "airplay";
+                  _title = 'photo';
                 });
               },
-            ),
+            )
           ],
         ),
       ),
